@@ -1,10 +1,28 @@
 body, html {
     height: 100%;
+    width: 100%;
+    margin: 0px;
 }
 
 .parallax {
     /* The image used */
-    background-image: url('assets/img_parallax.jpg');
+    /*background-image: url('../assets/img_parallax.jpg');*/
+    background-image: url('../assets/hiring.jpg');
+    
+    /* Full height */
+    height: 100%; 
+    background-blend-mode: color-dodge;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.parallax2 {
+    /* The image used */
+    background-image: url('../assets/validacao.jpg');
 
     /* Full height */
     height: 100%; 
@@ -14,4 +32,50 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.center-search {
+    margin: 0;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center-search > input[name=search] {
+    background-color: unset;
+    border: none;
+    border-bottom: 2px solid white;
+    font-size: 2em;
+    width: 319px;
+    /*text-decoration: underline;*/
+    color: white;
+    text-shadow: 1px 1px #acacac;
+    font-family: palatino;
+
+}
+
+.center-search input::-moz-placeholder {
+     color: white; /*Change the placeholder color*/
+     opacity: 1 !important; /*Change the opacity between 0 and 1*/
+}
+
+#back-line {
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: .4;
+
+}
+
+#header{
+    width: 100%;
+  height: 40px;
+  background-color: black;
+    position: fixed; 
+  transition: 0.3s ease;
+    padding:25px;
 }

@@ -2,19 +2,60 @@
 <html>
 <head>
 	<title>WorthZap</title>
+	<meta charset="utf-8">
 	<!-- Declarations -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<!-- Declarations -->
+	<script type="text/javascript">
+		$(function(){
+			var lastScrollTop = 0, delta = 5;
+			    $(window).scroll(function(event){
+			       var st = $(this).scrollTop();
+			       
+			       if(Math.abs(lastScrollTop - st) <= delta)
+			          return;
+			       
+			       if (st > lastScrollTop){
+			           // downscroll code
+			           $("#header").css('visibility','hidden').hover()
+			       } else {
+			          // upscroll code
+			          $("#header").css('visibility','visible');
+			       }
+			       lastScrollTop = st;
+			    });
+			    $(document).on('mousemove',function(e){
+			        var hidden = $("#header").css('visibility')!='visible' ? true : false;
+			        console.log(hidden);
+			        if(e.clientY < 50 && hidden)
+			            $("#header").css('visibility','visible');
+			        else if(e.clientY >50 && !hidden)
+			            $("#header").css('visibility','hidden');
+			            
+			        console.log(e.clientX );
+			    });
+			});
+	</script>
 </head>
 <body>
-<div class="parallax"></div>
+<div class="parallax">
+	<div id="header"></div>
+	<div id="back-line"></div>
+	<div class="center-search">
+		<input type="text" name="search" placeholder=" Qual a sua profissão?">
+	</div>
+</div>
 
-<div style="height:1000px;background-color:red;font-size:36px">
+<div style="height:1000px;background-color:lightgreen;font-size:36px">
 Scroll Up and Down this page to see the parallax scrolling effect.
 This div is just here to enable scrolling.
 Tip: Try to remove the background-attachment property to remove the scrolling effect.
 </div>
 
-<div class="parallax"></div>
+<div class="parallax2"></div>
 </body>
 </html>

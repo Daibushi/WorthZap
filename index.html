@@ -12,38 +12,11 @@
 	<!-- Declarations -->
 	<script type="text/javascript">
 		$(function(){
-			var lastScrollTop = 0, delta = 5;
-			    $(window).scroll(function(event){
-			       var st = $(this).scrollTop();
-			       
-			       if(Math.abs(lastScrollTop - st) <= delta)
-			          return;
-			       
-			       if (st > lastScrollTop){
-			           // downscroll code
-			           $("#header").css('visibility','hidden').hover()
-			       } else {
-			          // upscroll code
-			          $("#header").css('visibility','visible');
-			       }
-			       lastScrollTop = st;
-			    });
-			    $(document).on('mousemove',function(e){
-			        var hidden = $("#header").css('visibility')!='visible' ? true : false;
-			        console.log(hidden);
-			        if(e.clientY < 50 && hidden)
-			            $("#header").css('visibility','visible');
-			        else if(e.clientY >50 && !hidden)
-			            $("#header").css('visibility','hidden');
-			            
-			        console.log(e.clientX );
-			    });
 			});
 	</script>
 </head>
 <body>
 <div class="parallax">
-	<div id="header"></div>
 	<div id="back-line"></div>
 	<div class="center-search">
 		<input type="text" name="search" placeholder=" Qual a sua profissão?">
